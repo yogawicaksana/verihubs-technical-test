@@ -91,4 +91,6 @@ Class 3 (mask_weared_incorrect - 3%): Hard minority
 
 2. **Real Data Superiority**: **Real sample acquisition** provides **orders-of-magnitude greater performance per sample** compared to synthetic augmentation, as evidenced by mosaic's 2.5× dataset expansion yielding only 0.038 mAP gain.
 
-3. **Explore Newer Model**: Migrate from Faster R-CNN to modern architectures like DETR or YOLOv10 for better performance.
+3. **Limited Metrics**: We used mAP as our primary metrics, as well as per-class mAP. However, we are missing Precision/Recall curves, inference speed, or confusion metrics hides FP/FN tradeoffs in imbalance.
+
+4. **Explore Newer Model**: Migrate from Faster R-CNN to modern architectures like DETR or YOLOv10 for better performance.
