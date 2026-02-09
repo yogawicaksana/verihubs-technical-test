@@ -1,5 +1,5 @@
 from models.faster_rcnn import get_model
-from utils.inferece_utils import predict, visualize_predictions
+from utils.inferece_utils import load_annotations, predict, draw_predictions, save_img, save_json_predictions
 from utils.utils import download_model_weights
 import argparse
 import torch 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
                         help='Directory containing model checkpoint')
     parser.add_argument('--checkpoint', type=str, default='best_model.pth',
                         help='Checkpoint file to load (.pt)')
-    parser.add_argument('--image', type=str, default='../data/test/maksssksksss558.png',
+    parser.add_argument('--image', type=str, default='../data/test/images/maksssksksss803.png',
                         help='Path to single image for inference')
     parser.add_argument('--image_dir', type=str, default=None,
                         help='Directory containing images for batch inference')
@@ -41,16 +41,26 @@ if __name__ == "__main__":
     model.eval()
     print(f"Model loaded from {args.model_dir}/{args.checkpoint} and ready for inference on {args.device}")
 
+    try:
+        true_labels = load_annotations(args.image.replace('images', 'annotations').replace('.png', '.xml'))
+    except:
+        true_labels = None
+
     # Run inference
     if args.image:
         # Single image inference
         print(f"\nRunning inference on {args.image}")
-        img, boxes, labels, scores = predict(model, args.image, args.device, args.threshold)
-
-        print(f"Found {len(boxes)} detections")
-        for i, (box, label, score) in enumerate(zip(boxes, labels, scores)):
-            print(f"  {i+1}. Label: {label} - Score: {score:.3f} - Box: {box}")
+        img_array, boxes, labels, scores = predict(model, args.image, args.device, args.threshold)
 
         # Visualize
-        save_path = os.path.join(args.output_dir, os.path.basename(args.image)) if args.output_dir else None
-        visualize_predictions(img, boxes, labels, scores, save_path=save_path)
+        if true_labels:
+            result_img = draw_predictions(img_array, boxes, labels, scores, true_annotations=true_labels)
+        else:
+            result_img = draw_predictions(img_array, boxes, labels, scores)
+
+        # Save
+        save_path = args.output if args.output else os.path.join(args.output_dir, os.path.basename(args.image))
+        save_img(result_img, save_path)
+        save_json_predictions(boxes, labels, scores, save_path.replace('.png', '.json'))
+
+        print(f"Prediction completed and saved in {save_path}")
