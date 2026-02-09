@@ -1,0 +1,15 @@
+albumentations==2.0.8
+matplotlib==3.10.8
+mlflow==3.2.0
+mlflow_skinny==3.2.0
+mlflow_tracing==3.2.0
+numpy==2.4.2
+opencv_contrib_python==4.10.0.84
+opencv_python==4.11.0.86
+opencv_python_headless==4.11.0.86
+Pillow==12.1.0
+torch==2.5.1+cu121
+torchmetrics==1.8.2
+torchvision==0.20.1+cu121
+tqdm==4.67.1
+xmltodict==1.0.2

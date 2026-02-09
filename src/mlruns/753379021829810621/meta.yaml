@@ -1,0 +1,6 @@
+artifact_location: file:///root/projects/facemask-2/src/mlruns/753379021829810621
+creation_time: 1770544742805
+experiment_id: '753379021829810621'
+last_update_time: 1770544742805
+lifecycle_stage: active
+name: fasterrcnn-facemask-detection-frcnnv2

@@ -1,0 +1,6 @@
+artifact_location: file:///root/projects/facemask-2/src/mlruns/891546866177982261
+creation_time: 1770519084629
+experiment_id: '891546866177982261'
+last_update_time: 1770519084629
+lifecycle_stage: active
+name: fasterrcnn-facemask-detection-weightedclass

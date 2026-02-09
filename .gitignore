@@ -1,0 +1,6 @@
+data/annotations
+data/images
+data/face-mask-detection.zip
+__pycache__/
+todo.md
+models/fasterrcnn_facemask/

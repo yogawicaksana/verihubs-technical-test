@@ -1,0 +1,14 @@
+artifact_uri: file:///root/projects/facemask-2/src/mlruns/891546866177982261/ba4f467bfdbf4692b268281dde5fc692/artifacts
+end_time: 1770525403238
+entry_point_name: ''
+experiment_id: '891546866177982261'
+lifecycle_stage: active
+run_id: ba4f467bfdbf4692b268281dde5fc692
+run_name: fasterrcnn-facemask-training
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1770519085180
+status: 3
+tags: []
+user_id: root
