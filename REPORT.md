@@ -87,6 +87,8 @@ Class 3 (mask_weared_incorrect - 3%): Hard minority
 
 ## Future Work
 
-1. **Focal Loss Integration**: Replace CrossEntropy with **Focal Loss** (α=0.25, γ=2) to amplify minority class gradients **without dataset bloat**.
+1. **Focal Loss Integration**: Replace CrossEntropy with [**Focal Loss**](https://arxiv.org/pdf/1708.02002) to amplify minority class gradients **without dataset bloat**.
 
 2. **Real Data Superiority**: **Real sample acquisition** provides **orders-of-magnitude greater performance per sample** compared to synthetic augmentation, as evidenced by mosaic's 2.5× dataset expansion yielding only 0.038 mAP gain.
+
+3. **Explore Newer Model**: Migrate from Faster R-CNN to modern architectures like DETR or YOLOv10 for better performance.
