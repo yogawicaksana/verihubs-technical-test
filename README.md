@@ -105,7 +105,8 @@ where you also can customize the parameters via parser.
 cd src
 python inference.py
 ```
-where the prediction result will be saved in `outputs/`
+where the prediction result will be saved in `outputs/`. The model weights will be downloaded automatically as you run this file.
+The prediction data is available in `.data/test/`. You can pass the image name as argument, e.g., `--image "../data/test/images/maksssksksss803.png"`.
 
 
 
